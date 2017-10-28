@@ -7,31 +7,39 @@
     body {
       font-family: 'Source Code Pro', monospace;
       text-align: center;
+      background-color: #DDDDDD;
     }
     h2 {
       margin-top: 0px;
     }
     </style>
     <body>
-      <br/>
-    <span id='1'>&nbsp;&nbsp;#     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/></span>
-    <span id='2'>&nbsp;&nbsp;#     &nbsp;#     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            <br/></span>
-    <span id='3'>#     &nbsp;#     &nbsp;#     &nbsp;#     &nbsp;&nbsp;&nbsp;&nbsp;#                 <br/></span>
-    <span id='4'>#     &nbsp;#     &nbsp;#     &nbsp;#     &nbsp;#     &nbsp;#                       <br/></span>
-      <h2>ASCIIPlayer</h2>
-      <p>Coming Soon<p>
-      <br/>
+    <br/>
+      
+    <p style="margin-bottom: 0px; color: #2060DD; font-size: 1.26em;" >
+      <strong>
+        <span id='1'>&nbsp;# &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/></span>
+        <span id='2'>&nbsp;# #     &nbsp;&nbsp;            <br/></span>
+        <span id='3'>#     # #     &nbsp;&nbsp;#           <br/></span>
+        <span id='4'>#     # #     #           #           <br/></span>
+      </strong>
+    </p>
+
+    <h2>ASCIIPlayer</h2>
+    <p>Coming Soon<p>
+    <br/>
+
   </body>
 
   <script>
   var current = 0;
-  var base_pos = 7;
+  var base_pos = 13;
   setInterval(function() {
     current += 40;
     var ms = new Date().getTime();
-    var offset = 150;
-    var scalar = 7;
-    var timestretch = 400;
+    var offset = 0.6;
+    var scalar = 10;
+    var timestretch = 500;
     var fluc1 = Math.sin(ms / timestretch + offset * 0) * scalar;
     var fluc2 = Math.sin(ms / timestretch + offset * 1) * scalar;
     var fluc3 = Math.sin(ms / timestretch + offset * 2) * scalar;
