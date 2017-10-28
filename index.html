@@ -1,16 +1,45 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
   </head>
-  <body style="text-align: center;">
-    <pre>
-    
-ASCIIPlayer
-
-  #      
-  # #    
-# # #   #
-# # # # #
-</pre>
+  <style>
+    body {
+      font-family: 'Source Code Pro', monospace;
+      text-align: center;
+    }
+    h2 {
+      margin-top: 0px;
+    }
+    </style>
+    <body>
+      <br/>
+    <span id='1'>&nbsp;&nbsp;#     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/></span>
+    <span id='2'>&nbsp;&nbsp;#     &nbsp;#     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            <br/></span>
+    <span id='3'>#     &nbsp;#     &nbsp;#     &nbsp;#     &nbsp;&nbsp;&nbsp;&nbsp;#                 <br/></span>
+    <span id='4'>#     &nbsp;#     &nbsp;#     &nbsp;#     &nbsp;#     &nbsp;#                       <br/></span>
+      <h2>ASCIIPlayer</h2>
+      <p>Coming Soon<p>
+      <br/>
   </body>
+
+  <script>
+  var current = 0;
+  var base_pos = 7;
+  setInterval(function() {
+    current += 40;
+    var ms = new Date().getTime();
+    var offset = 150;
+    var scalar = 7;
+    var timestretch = 400;
+    var fluc1 = Math.sin(ms / timestretch + offset * 0) * scalar;
+    var fluc2 = Math.sin(ms / timestretch + offset * 1) * scalar;
+    var fluc3 = Math.sin(ms / timestretch + offset * 2) * scalar;
+    var fluc4 = Math.sin(ms / timestretch + offset * 3) * scalar;
+    document.getElementById("1").style.marginLeft = "" + (base_pos + fluc1) + "px";
+    document.getElementById("2").style.marginLeft = "" + (base_pos + fluc2) + "px";
+    document.getElementById("3").style.marginLeft = "" + (base_pos + fluc3) + "px";
+    document.getElementById("4").style.marginLeft = "" + (base_pos + fluc4) + "px";
+  }, 20);
+  </script>
 </html>
