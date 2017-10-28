@@ -1,56 +1,66 @@
 <html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
-  </head>
-  <style>
-    body {
-      font-family: 'Source Code Pro', monospace;
-      text-align: center;
-      background-color: #DDDDDD;
-    }
-    h2 {
-      margin-top: 0px;
-    }
-    </style>
-    <body>
-    <br/>
-      
-    <p style="margin-bottom: 0px; color: #2060DD; font-size: 1.26em;" >
-      <strong>
-        <span id='1'>&nbsp;# &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/></span>
-        <span id='2'>&nbsp;# #     &nbsp;&nbsp;            <br/></span>
-        <span id='3'>#     # #     &nbsp;&nbsp;#           <br/></span>
-        <span id='4'>#     # #     #           #           <br/></span>
-      </strong>
-    </p>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
+		<meta name="description" content="A command-line audio player designed to handle a wide range of audio formats.">
+		<title>ASCII Player</title>
+	</head>
 
-    <h2>ASCIIPlayer</h2>
-    <h4>Windows x86:</h4>
-    <p><a href="installer/ASCIIPlayerInstaller0.1.0.exe" download>[Installer]</a> <a href="portable/ASCIIPlayer0.1.0.zip" download>[.zip file]</a></p>
-    <h4>Linux x86:</h4>
-    <p>[coming soon!]</p>
-    <br/>
+	<style>
+		body {
+			font-family: 'Source Code Pro', monospace;
+			text-align: center;
+			background-color: #DDDDDD;
+		}
+		h2 {
+			margin-top: 0px;
+		}
+	</style>
 
-  </body>
+	<body>
+		<div align="center" style="max-width: 400px; margin: 0 auto;">
+			
 
-  <script>
-  var current = 0;
-  var base_pos = 13;
-  setInterval(function() {
-    current += 40;
-    var ms = new Date().getTime();
-    var offset = 0.6;
-    var scalar = 7;
-    var timestretch = 550;
-    var fluc1 = Math.sin(ms / timestretch + offset * 0) * scalar;
-    var fluc2 = Math.sin(ms / timestretch + offset * 1) * scalar;
-    var fluc3 = Math.sin(ms / timestretch + offset * 2) * scalar;
-    var fluc4 = Math.sin(ms / timestretch + offset * 3) * scalar;
-    document.getElementById("1").style.marginLeft = "" + (base_pos + fluc1) + "px";
-    document.getElementById("2").style.marginLeft = "" + (base_pos + fluc2) + "px";
-    document.getElementById("3").style.marginLeft = "" + (base_pos + fluc3) + "px";
-    document.getElementById("4").style.marginLeft = "" + (base_pos + fluc4) + "px";
-  }, 20);
-  </script>
+			<br/>
+			<p style="margin-bottom: 0px; color: #2060DD; font-size: 1.26em;" >
+				<strong>
+					<span id='1'>&nbsp;# &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/></span>
+					<span id='2'>&nbsp;# #     &nbsp;&nbsp;            <br/></span>
+					<span id='3'>#     # #     &nbsp;&nbsp;#           <br/></span>
+					<span id='4'>#     # #     #           #           <br/></span>
+				</strong>
+			</p>
+			<h2>ASCIIPlayer</h2>
+			<hr/>
+			
+
+			<h4>Windows x86:</h4>
+			<p>
+				<a href="installer/ASCIIPlayerInstaller0.1.0.exe" download>[Installer]</a> <a href="portable/ASCIIPlayer0.1.0.zip" download>[.zip file]</a>
+			</p>
+			<h4>Linux x86:</h4>
+			<p>[coming soon!]</p>
+			<hr/>
+			
+
+			<br/>
+			<p>This music playback program is currently in Beta, and is subject to change.</p>
+
+		</div>
+	</body>
+
+	<script>
+	setInterval(function() {
+		const lo = 13; // left offset
+		const o = 0.6; // offset
+		const t = 550; // time
+		const s = 7;   // scalar
+
+		var ms = new Date().getTime();
+		document.getElementById("1").style.marginLeft = ""+ (lo+Math.sin(ms/t+o*0)*s) +"px";
+		document.getElementById("2").style.marginLeft = ""+ (lo+Math.sin(ms/t+o*1)*s) +"px";
+		document.getElementById("3").style.marginLeft = ""+ (lo+Math.sin(ms/t+o*2)*s) +"px";
+		document.getElementById("4").style.marginLeft = ""+ (lo+Math.sin(ms/t+o*3)*s) +"px";
+	}, 20);
+	</script>
 </html>
