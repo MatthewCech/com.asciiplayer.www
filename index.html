@@ -17,6 +17,31 @@
 		}
 	</style>
 
+
+	<script type='text/javascript'>
+
+	let randNum = 0;             
+	let prev = 0;               
+	let taglines = [ 
+		"Bring your command line to life",
+		"Enhancing your terminal",
+		"Music where you least expect it",
+		"Quality fluffy blue visuals"
+	];
+
+
+	function GetRandText() {
+		prev = randNum;
+		while(randNum == prev)
+		  randNum = Math.floor(Math.random() * taglines.length);
+		
+		document.getElementById('tagline').innerHTML=taglines[randNum];
+	}
+
+	window.setInterval(function(){ GetRandText(); }, 4000);
+
+	</script>
+
 	<body>
 		<div align="center" style="max-width: 400px; margin: 0 auto;">
 			
@@ -31,13 +56,13 @@
 				</strong>
 			</p>
 			<h2>ASCIIPlayer</h2>
-			<p><em>Bring your command line to life</em></p><!-- <p>Enhance your Terminal</p> <p>Music where you least expect it</p>-->
+			<p><em id="tagline">Bring your command line to life</em></p>
 			<hr/>
 			
 
 			<h4>Windows x86:</h4>
 			<p>
-				<a href="/installer/ASCIIPlayerInstaller0.1.1.exe" download>[Installer]</a> <a href="/portable/ASCIIPlayer0.1.1.zip" download>[.zip file]</a>
+				<a href="/installer/ASCIIPlayerInstaller0.1.2.exe" download>[Installer]</a> <a href="/portable/ASCIIPlayer0.1.2.zip" download>[.zip file]</a>
 			</p>
 			<h4>Linux x86:</h4>
 			<p>[coming soon!]</p>
@@ -47,6 +72,7 @@
 			
 			<hr/>
 			<h4>Older Versions</h4>
+			<p>v0.1.1: win: <a href="/installer/ASCIIPlayerInstaller0.1.1.exe" download>[install]</a> <a href="/portable/ASCIIPlayer0.1.1.zip" download>[zip]</a>
 			<p>v0.1.0: win: <a href="/installer/ASCIIPlayerInstaller0.1.0.exe" download>[install]</a> <a href="/portable/ASCIIPlayer0.1.0.zip" download>[zip]</a>
 		</div>
 	</body>
