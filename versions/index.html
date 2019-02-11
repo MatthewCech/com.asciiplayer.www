@@ -1,0 +1,54 @@
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="A command-line audio player designed to handle a wide range of audio formats.">
+
+		<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
+		<link rel="icon" href="/favicon.ico">
+		<link rel="stylesheet" type="text/css" href="/style.css">
+
+		<title>ASCIIPlayer</title>
+	</head>
+
+	<body>
+		<div align="center" style="max-width: 400px; margin: 0 auto;">
+			
+
+			<br/>
+			<p style="margin-bottom: 0px; color: #2060DD; font-size: 1.26em;" >
+				<strong>
+					<span id='1'>&nbsp;# &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/></span>
+					<span id='2'>&nbsp;# #     &nbsp;&nbsp;            <br/></span>
+					<span id='3'>#     # #     &nbsp;&nbsp;#           <br/></span>
+					<span id='4'>#     # #     #           #           <br/></span>
+				</strong>
+			</p>
+			<h2>ASCIIPlayer</h2>
+			<p><a href="/">[Home]</a></p>
+			<hr/>
+
+			<h4>Version History</h4>
+			<p>v0.2.1: win: <a href="/installer/ASCIIPlayerInstaller_v0.2.1.exe" download>[install]</a> <a href="/portable/ASCIIPlayer_v0.2.1.zip" download>[zip]</a></p>
+			<p>v0.2.0: win: <a href="/installer/ASCIIPlayerInstaller_v0.2.0.exe" download>[install]</a> <a href="/portable/ASCIIPlayer_v0.2.0.zip" download>[zip]</a></p>
+			<p>v0.1.2: win: <a href="/installer/ASCIIPlayerInstaller_v0.1.2.exe" download>[install]</a> <a href="/portable/ASCIIPlayer_v0.1.2.zip" download>[zip]</a></p>
+			<p>v0.1.1: win: <a href="/installer/ASCIIPlayerInstaller_v0.1.1.exe" download>[install]</a> <a href="/portable/ASCIIPlayer_v0.1.1.zip" download>[zip]</a></p>
+			<p>v0.1.0: win: <a href="/installer/ASCIIPlayerInstaller_v0.1.0.exe" download>[install]</a> <a href="/portable/ASCIIPlayer_v0.1.0.zip" download>[zip]</a></p>
+			<p>Classic: <a href="/installer/ASCIIPlayerInstaller_Classic.exe" download>[install]</a> <a href="/portable/ASCIIPlayer_Classic.zip" download>[zip]</a></p>
+		</div>
+	</body>
+
+	<script>
+	setInterval(function() {
+		const lo = 13; // left offset
+		const o = 0.6; // offset
+		const t = 550; // time
+		const s = 7;   // scalar
+
+		var ms = new Date().getTime();
+		document.getElementById("1").style.marginLeft = ""+ (lo+Math.sin(ms/t+o*0)*s) +"px";
+		document.getElementById("2").style.marginLeft = ""+ (lo+Math.sin(ms/t+o*1)*s) +"px";
+		document.getElementById("3").style.marginLeft = ""+ (lo+Math.sin(ms/t+o*2)*s) +"px";
+		document.getElementById("4").style.marginLeft = ""+ (lo+Math.sin(ms/t+o*3)*s) +"px";
+	}, 20);
+	</script>
+</html>

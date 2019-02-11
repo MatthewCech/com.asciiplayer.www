@@ -1,42 +1,35 @@
 <html>
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="A command-line audio player designed to handle a wide range of audio formats.">
+
 		<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
 		<link rel="icon" href="/favicon.ico">
-		<meta name="description" content="A command-line audio player designed to handle a wide range of audio formats.">
+		<link rel="stylesheet" type="text/css" href="/style.css">
+
 		<title>ASCIIPlayer</title>
+
 	</head>
-
-	<style>
-		body {
-			font-family: 'Source Code Pro', monospace;
-			text-align: center;
-			background-color: #DDDDDD;
-		}
-		h2 {
-			margin-top: 0px;
-		}
-	</style>
-
 
 	<script type='text/javascript'>
 
 	let randNum = 0;             
 	let prev = 0;               
 	let taglines = [ 
+		"Keep your listening lightweight",
+		"Don't wait for your music",
 		"Bring your command line to life",
 		"Enhancing your terminal",
 		"Music where you least expect it",
-		"Quality fluffy blue visuals"
+		"Exciting multicolor ascii visuals",
 	];
-
 
 	function GetRandText() {
 		prev = randNum;
 		while(randNum == prev)
 		  randNum = Math.floor(Math.random() * taglines.length);
 		
-		document.getElementById('tagline').innerHTML=taglines[randNum];
+		document.getElementById('tagline').innerHTML = taglines[randNum];
 	}
 
 	window.setInterval(function(){ GetRandText(); }, 4000);
@@ -46,7 +39,6 @@
 	<body>
 		<div align="center" style="max-width: 400px; margin: 0 auto;">
 			
-
 			<br/>
 			<p style="margin-bottom: 0px; color: #2060DD; font-size: 1.26em;" >
 				<strong>
@@ -59,6 +51,7 @@
 			<h2>ASCIIPlayer</h2>
 			<p><em id="tagline">Bring your command line to life</em></p>
 			<hr/>
+			<p>Current Version: 0.2.1 (<a href="/changelog">changelog</a>)</em></p>
 
 			<h4>Windows x86:</h4>
 			<p>
@@ -66,19 +59,12 @@
 			</p>
 			<h4>Linux x86:</h4>
 			<p>[coming soon!]</p>
+			<p><em>(<a href="/versions">archive</a>)</em></p>
 			<hr/>
-			<p>Current Version: 0.2.1 <em>(<a href="/changelog">changelog</a>)</em></p>
-
+			<p>This ASCII-based music playback program is currently in Beta, so there might be bugs! If you're after stability, check for larger version increments in the archive, or try classic: A feature and os-limited but stable old version. To take a peek at upcoming features, file bugs, or grumble about the code, check out the repo on <a style="text-decoration:none;" href="https://github.com/MatthewCech/ASCIIPlayer" download>GitHub</a>!</p>
 			<hr/>
-			<p>This ASCII-based music playback program is currently in Beta, so there will be bugs! If you're after stability, check for larger version increments in the Older Versions section, or try classic: A feature and os-limited but stable old version. For the newest features or peek at new things in development, you can check out the repo on <a style="text-decoration:none;" href="https://github.com/MatthewCech/ASCIIPlayer" download>GitHub</a>!</p>
-			<hr/>
-
-			<h4>Older Versions</h4>
-			<p>v0.2.0: win: <a href="/installer/ASCIIPlayerInstaller_v0.2.0.exe" download>[install]</a> <a href="/portable/ASCIIPlayer_v0.2.0.zip" download>[zip]</a></p>
-			<p>v0.1.2: win: <a href="/installer/ASCIIPlayerInstaller_v0.1.2.exe" download>[install]</a> <a href="/portable/ASCIIPlayer_v0.1.2.zip" download>[zip]</a></p>
-			<p>v0.1.1: win: <a href="/installer/ASCIIPlayerInstaller_v0.1.1.exe" download>[install]</a> <a href="/portable/ASCIIPlayer_v0.1.1.zip" download>[zip]</a></p>
-			<p>v0.1.0: win: <a href="/installer/ASCIIPlayerInstaller_v0.1.0.exe" download>[install]</a> <a href="/portable/ASCIIPlayer_v0.1.0.zip" download>[zip]</a></p>
-			<p>Classic: <a href="/installer/ASCIIPlayerInstaller_Classic.exe" download>[install]</a> <a href="/portable/ASCIIPlayer_Classic.zip" download>[zip]</a></p>
+			<script type='text/javascript' src='https://ko-fi.com/widgets/widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Donate Coffee!', '#468eb8', 'C0C6Q93V');kofiwidget2.draw();</script>
+			<br/>
 		</div>
 	</body>
 
